@@ -56,12 +56,9 @@ function enviar() {
 
     <UCard>
       <div class="space-y-3">
-        <UCheckbox
-          v-for="opcao in opcoes"
-          :key="opcao"
+        <UCheckboxGroup
           v-model="selecionados"
-          :value="opcao"
-          :label="opcao"
+          :items="opcoes"
         />
         <UCheckbox
           v-model="outroAtivo"
