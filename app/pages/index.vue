@@ -21,7 +21,7 @@ const menu = [
 
 <template>
   <div class="space-y-6">
-    <div class="rounded-xl overflow-hidden bg-gradient-to-br from-primary-700 to-primary-950 text-white p-6">
+    <div class="rounded-xl overflow-hidden bg-linear-to-br from-primary-700 to-primary-950 text-white p-6">
       <p class="text-2xl font-bold">
         Bem-vindo ao Hotel Senac Ilha do Boi!
       </p>
