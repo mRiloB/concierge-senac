@@ -16,6 +16,11 @@ export default defineNuxtConfig({
     '/': { prerender: true }
   },
 
+  devServer: {
+    host: '0.0.0.0',
+    port: 3000
+  },
+
   compatibilityDate: '2026-06-30',
 
   eslint: {
@@ -24,6 +29,12 @@ export default defineNuxtConfig({
         commaDangle: 'never',
         braceStyle: '1tbs'
       }
+    }
+  },
+  icon: {
+    serverBundle: 'local',
+    clientBundle: {
+      scan: true
     }
   }
 })
