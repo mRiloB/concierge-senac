@@ -1,6 +1,7 @@
 <script setup lang="ts">
 definePageMeta({ layout: 'guest' })
 
+const { t } = useI18n()
 const session = useSessionStore()
 const satisfaction = useSatisfactionStore()
 
@@ -9,17 +10,17 @@ const confortavel = ref<'sim' | 'parcial' | 'nao' | ''>('')
 const observacoes = ref('')
 const enviado = ref(false)
 
-const opcoesResposta = [
-  { value: 'sim', label: 'Sim' },
-  { value: 'parcial', label: 'Em parte' },
-  { value: 'nao', label: 'Não' }
-]
+const opcoesResposta = computed(() => [
+  { value: 'sim', label: t('form.answers.yes') },
+  { value: 'parcial', label: t('form.answers.partial') },
+  { value: 'nao', label: t('form.answers.no') }
+])
 
 const podeEnviar = computed(() => limpo.value && confortavel.value)
 
 function enviar() {
   satisfaction.adicionar({
-    apartamento: session.apartamento || 'não informado',
+    apartamento: session.apartamento || t('common.notInformed'),
     limpo: limpo.value as 'sim' | 'parcial' | 'nao',
     confortavel: confortavel.value as 'sim' | 'parcial' | 'nao',
     observacoes: observacoes.value.trim() || undefined
@@ -32,11 +33,10 @@ function enviar() {
   <div class="space-y-4 max-w-lg">
     <div>
       <p class="text-xl font-bold">
-        Esperamos que sua hospedagem esteja sendo especial!
+        {{ t('form.title') }}
       </p>
       <p class="text-neutral-500 text-sm mt-1">
-        Gostaríamos de saber como está sendo sua estadia e se podemos contribuir para torná-la
-        ainda mais agradável.
+        {{ t('form.subtitle') }}
       </p>
     </div>
 
@@ -45,30 +45,30 @@ function enviar() {
       icon="i-lucide-heart"
       color="success"
       variant="subtle"
-      title="Obrigado pela sua resposta!"
-      description="Agradecemos por escolher o Hotel Senac Ilha do Boi. Sua opinião ajuda a tornar sua estadia ainda melhor."
+      :title="t('form.thanksTitle')"
+      :description="t('form.thanksDescription')"
     />
 
     <UCard v-else>
       <div class="space-y-5">
-        <UFormField label="O apartamento está limpo e organizado conforme suas expectativas?">
+        <UFormField :label="t('form.question1')">
           <URadioGroup
             v-model="limpo"
             :items="opcoesResposta"
             orientation="horizontal"
           />
         </UFormField>
-        <UFormField label="Está confortável e atendendo às suas necessidades?">
+        <UFormField :label="t('form.question2')">
           <URadioGroup
             v-model="confortavel"
             :items="opcoesResposta"
             orientation="horizontal"
           />
         </UFormField>
-        <UFormField label="Há algo que possamos providenciar neste momento para tornar sua hospedagem ainda melhor?">
+        <UFormField :label="t('form.question3')">
           <UTextarea
             v-model="observacoes"
-            placeholder="Opcional"
+            :placeholder="t('common.optional')"
             class="w-full"
           />
         </UFormField>
@@ -81,7 +81,7 @@ function enviar() {
           :disabled="!podeEnviar"
           @click="enviar"
         >
-          Enviar resposta
+          {{ t('form.sendButton') }}
         </UButton>
       </template>
     </UCard>

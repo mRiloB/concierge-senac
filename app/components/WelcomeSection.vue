@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const { t } = useI18n()
 const session = useSessionStore()
 
 const emit = defineEmits<{
@@ -30,6 +31,11 @@ function entrar() {
     <!-- Overlay escuro para legibilidade -->
     <div class="absolute inset-0 bg-linear-to-b from-black/60 via-black/50 to-black/70" />
 
+    <!-- Seletor de idioma -->
+    <div class="absolute top-4 right-4 z-20">
+      <LocaleSwitcher />
+    </div>
+
     <!-- Conteúdo -->
     <div class="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center text-white">
       <div class="flex size-16 items-center justify-center rounded-full bg-white/15 backdrop-blur-sm mb-6">
@@ -40,10 +46,10 @@ function entrar() {
       </div>
 
       <p class="text-3xl sm:text-4xl font-bold max-w-md">
-        Seja bem-vindo(a) ao Hotel Senac Ilha do Boi
+        {{ t('welcome.title') }}
       </p>
       <p class="text-white/80 mt-3 max-w-sm">
-        Para começar, informe o número do seu apartamento e tenha acesso ao Concierge Digital.
+        {{ t('welcome.subtitle') }}
       </p>
 
       <form
@@ -53,7 +59,7 @@ function entrar() {
         <div class="flex gap-2">
           <UInput
             v-model="numeroQuarto"
-            placeholder="Nº do quarto: 204"
+            :placeholder="t('welcome.placeholder')"
             size="xl"
             icon="i-lucide-door-open"
             class="flex-1"
@@ -73,7 +79,7 @@ function entrar() {
           v-if="erro"
           class="text-sm text-red-300 text-left"
         >
-          Informe o número do apartamento para continuar.
+          {{ t('welcome.error') }}
         </p>
       </form>
     </div>

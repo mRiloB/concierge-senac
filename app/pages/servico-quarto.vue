@@ -1,15 +1,14 @@
 <script setup lang="ts">
 definePageMeta({ layout: 'guest' })
 
+const { t, tm } = useI18n()
 const session = useSessionStore()
 const requests = useRequestsStore()
 
-const opcoes = [
-  'Travesseiro extra',
-  'Toalha extra',
-  'Limpeza do apartamento',
-  'Ferro de passar roupas'
-]
+const opcoes = computed(() => {
+  const options = tm('roomService.options') as object[]
+  return options.map(opt => opt.loc.source ?? '-') as string[]
+})
 
 const selecionados = ref<string[]>([])
 const outroTexto = ref('')
@@ -19,12 +18,12 @@ const enviado = ref(false)
 const podeEnviar = computed(() => selecionados.value.length > 0 || (outroAtivo.value && outroTexto.value.trim().length > 0))
 
 function enviar() {
-  const apartamento = session.apartamento || 'não informado'
+  const apartamento = session.apartamento || t('common.notInformed')
   for (const item of selecionados.value) {
     requests.adicionar({ categoria: 'quarto', titulo: item, apartamento })
   }
   if (outroAtivo.value && outroTexto.value.trim()) {
-    requests.adicionar({ categoria: 'quarto', titulo: 'Outros', apartamento, detalhe: outroTexto.value.trim() })
+    requests.adicionar({ categoria: 'quarto', titulo: t('common.other'), apartamento, detalhe: outroTexto.value.trim() })
   }
   enviado.value = true
   selecionados.value = []
@@ -37,10 +36,10 @@ function enviar() {
   <div class="space-y-4">
     <div>
       <p class="text-xl font-bold">
-        Serviço de Quarto
+        {{ t('roomService.title') }}
       </p>
       <p class="text-neutral-500 text-sm">
-        Selecione o que você precisa. Sua solicitação será encaminhada automaticamente para a recepção.
+        {{ t('roomService.subtitle') }}
       </p>
     </div>
 
@@ -49,8 +48,8 @@ function enviar() {
       icon="i-lucide-check-circle"
       color="success"
       variant="subtle"
-      title="Solicitação enviada"
-      description="Sua solicitação foi encaminhada automaticamente para a recepção."
+      :title="t('roomService.sentTitle')"
+      :description="t('roomService.sentDescription')"
     />
 
     <UCard>
@@ -61,12 +60,12 @@ function enviar() {
         />
         <UCheckbox
           v-model="outroAtivo"
-          label="Outros"
+          :label="t('common.other')"
         />
         <UTextarea
           v-if="outroAtivo"
           v-model="outroTexto"
-          placeholder="Ex: &quot;Necessito de um cobertor adicional.&quot;"
+          :placeholder="t('roomService.otherPlaceholder')"
           class="w-full"
         />
       </div>
@@ -78,7 +77,7 @@ function enviar() {
           :disabled="!podeEnviar"
           @click="enviar"
         >
-          Enviar Solicitação
+          {{ t('common.sendRequest') }}
         </UButton>
       </template>
     </UCard>

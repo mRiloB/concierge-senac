@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const { t } = useI18n()
 const route = useRoute()
 const showBanner = computed(() => route.path !== '/guia-tour')
 </script>
@@ -15,23 +16,27 @@ const showBanner = computed(() => route.path !== '/guia-tour')
         </div>
         <div class="min-w-0">
           <p class="font-semibold leading-tight truncate">
-            Hotel Senac Ilha do Boi
+            {{ t('header.hotelName') }}
           </p>
           <p class="text-xs text-white/70 leading-tight">
-            Concierge Digital
+            {{ t('header.subtitle') }}
           </p>
         </div>
-        <UButton
-          v-if="route.path !== '/'"
-          to="/"
-          icon="i-lucide-home"
-          color="neutral"
-          variant="ghost"
-          class="ml-auto text-white hover:bg-white/10"
-          size="sm"
-        >
-          Início
-        </UButton>
+
+        <div class="ml-auto flex items-center gap-1">
+          <LocaleSwitcher />
+          <UButton
+            v-if="route.path !== '/'"
+            to="/"
+            icon="i-lucide-home"
+            color="neutral"
+            variant="ghost"
+            class="text-white hover:bg-white/10"
+            size="sm"
+          >
+            {{ t('common.home') }}
+          </UButton>
+        </div>
       </div>
     </header>
 
@@ -53,10 +58,10 @@ const showBanner = computed(() => route.path !== '/guia-tour')
             class="size-10"
           />
           <p class="font-bold text-lg tracking-wide text-center">
-            GUIA TOUR
+            {{ t('guiaTourBanner.title') }}
           </p>
           <p class="text-xs text-white/80 text-center">
-            Descubra praias, restaurantes, passeios e eventos do Espírito Santo
+            {{ t('guiaTourBanner.subtitle') }}
           </p>
         </NuxtLink>
 
@@ -68,7 +73,7 @@ const showBanner = computed(() => route.path !== '/guia-tour')
             name="i-lucide-compass"
             class="size-4"
           />
-          GUIA TOUR
+          {{ t('guiaTourBanner.title') }}
         </NuxtLink>
       </aside>
     </div>
@@ -78,7 +83,7 @@ const showBanner = computed(() => route.path !== '/guia-tour')
         to="/admin"
         class="text-xs text-neutral-400 hover:text-neutral-500"
       >
-        Acesso da recepção
+        {{ t('common.receptionAccess') }}
       </NuxtLink>
     </div>
   </div>
