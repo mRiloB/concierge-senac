@@ -4,13 +4,6 @@ import WelcomeSection from '~/components/WelcomeSection.vue'
 definePageMeta({ layout: 'guest' })
 
 const session = useSessionStore()
-// const apartamentoInput = ref(session.apartamento)
-
-// function confirmarApartamento() {
-//   if (apartamentoInput.value.trim()) {
-//     session.definirApartamento(apartamentoInput.value)
-//   }
-// }
 
 const menu = [
   { to: '/servico-quarto', icon: 'i-lucide-bed-double', title: 'Serviço de Quarto', description: 'Travesseiro, toalha, limpeza e mais' },
@@ -41,24 +34,6 @@ const menu = [
         </p>
       </div>
 
-      <!-- <UCard v-if="!session.apartamento">
-        <p class="font-medium mb-2">
-          Para personalizar seu atendimento, informe o número do seu apartamento
-        </p>
-        <div class="flex gap-2 max-w-xs">
-          <UInput
-            v-model="apartamentoInput"
-            placeholder="Ex: 204"
-            @keyup.enter="confirmarApartamento"
-          />
-          <UButton
-            icon="i-lucide-check"
-            @click="confirmarApartamento"
-          >
-            Confirmar
-          </UButton>
-        </div>
-      </UCard> -->
       <div
         class="flex items-center gap-2 text-sm text-neutral-500"
       >
