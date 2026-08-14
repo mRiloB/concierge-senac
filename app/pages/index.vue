@@ -10,7 +10,8 @@ const menu = [
   { to: '/manutencao', icon: 'i-lucide-wrench', title: 'Manutenção', description: 'Relate um problema no seu apartamento' },
   { to: '/farmacias', icon: 'i-lucide-cross', title: 'Farmácias', description: 'Farmácias próximas ao hotel' },
   { to: '/transportes', icon: 'i-lucide-bus', title: 'Transportes Coletivos', description: 'Ônibus e transporte aquaviário' },
-  { to: '/late-checkout', icon: 'i-lucide-clock', title: 'Late Check-out', description: 'Solicite a extensão da sua estadia' }
+  { to: '/late-checkout', icon: 'i-lucide-clock', title: 'Late Check-out', description: 'Solicite a extensão da sua estadia' },
+  { to: '/regras', icon: 'i-lucide-book-open', title: 'Regras do Hotel', description: 'Horários de gastronomia, lazer e mais' }
 ]
 </script>
 
@@ -34,9 +35,7 @@ const menu = [
         </p>
       </div>
 
-      <div
-        class="flex items-center gap-2 text-sm text-neutral-500"
-      >
+      <div class="flex items-center gap-2 text-sm text-neutral-500">
         <UIcon
           name="i-lucide-door-open"
           class="size-4"
