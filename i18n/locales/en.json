@@ -1,0 +1,177 @@
+{
+  "common": {
+    "home": "Home",
+    "receptionAccess": "Staff access",
+    "apartment": "Room {number}",
+    "change": "change",
+    "optional": "Optional",
+    "other": "Other",
+    "sendRequest": "Send Request",
+    "notInformed": "not informed",
+    "route": "Route"
+  },
+  "header": {
+    "hotelName": "Hotel Senac Ilha do Boi",
+    "subtitle": "Digital Concierge"
+  },
+  "guiaTourBanner": {
+    "title": "TOUR GUIDE",
+    "subtitle": "Discover beaches, restaurants, tours and events in Espírito Santo"
+  },
+  "welcome": {
+    "title": "Welcome to Hotel Senac Ilha do Boi",
+    "subtitle": "To get started, enter your room number to access the Digital Concierge.",
+    "placeholder": "Room no.: 204",
+    "error": "Please enter your room number to continue."
+  },
+  "home": {
+    "welcomeTitle": "Welcome to Hotel Senac Ilha do Boi!",
+    "welcomeSubtitle": "We're delighted to have you. Use our Digital Concierge to request services, check useful information and discover the best tourist experiences in Espírito Santo.",
+    "satisfactionTitle": "How is your stay going?",
+    "satisfactionSubtitle": "Answer our short satisfaction survey",
+    "satisfactionButton": "Answer",
+    "menu": {
+      "roomService": { "title": "Room Service", "description": "Pillow, towel, cleaning and more" },
+      "maintenance": { "title": "Maintenance", "description": "Report an issue in your room" },
+      "pharmacies": { "title": "Pharmacies", "description": "Pharmacies near the hotel" },
+      "transport": { "title": "Public Transport", "description": "Bus and waterway transport" },
+      "lateCheckout": { "title": "Late Check-out", "description": "Request an extension of your stay" },
+      "rules": { "title": "Hotel Guide", "description": "Dining, leisure hours and more" }
+    }
+  },
+  "roomService": {
+    "title": "Room Service",
+    "subtitle": "Select what you need. Your request will be forwarded to reception automatically.",
+    "options": ["Extra pillow", "Extra towel", "Room cleaning", "Iron"],
+    "otherPlaceholder": "E.g. \"I need an extra blanket.\"",
+    "sentTitle": "Request sent",
+    "sentDescription": "Your request has been automatically forwarded to reception."
+  },
+  "maintenance": {
+    "title": "Maintenance",
+    "subtitle": "Let us know about any issue in your room. The request will be directed to the responsible team for review.",
+    "options": ["Air conditioning", "Shower", "Faucet", "TV", "Wi-Fi"],
+    "problemPrefix": "Issue",
+    "otherPlaceholder": "E.g. \"The outlet near the bed isn't working.\"",
+    "sentTitle": "Request sent",
+    "sentDescription": "The request will be directed to the responsible team for review."
+  },
+  "pharmacies": {
+    "title": "Pharmacies",
+    "subtitle": "Pharmacies closest to Hotel Senac Ilha do Boi.",
+    "items": [
+      { "name": "Farmácia Ilha do Boi", "address": "Av. Saturnino de Brito, Ilha do Boi", "distance": "450 m", "phone": "+55 (27) 3345-1122" },
+      { "name": "Drogaria São Paulo", "address": "Av. Dante Michelini, Praia do Canto", "distance": "1.8 km", "phone": "+55 (27) 3222-4488" },
+      { "name": "Farmácia Pague Menos", "address": "Av. Nossa Senhora da Penha, Praia do Canto", "distance": "2.3 km", "phone": "+55 (27) 3225-6677" }
+    ]
+  },
+  "transport": {
+    "title": "Public Transport",
+    "subtitle": "Information about the public transport options available.",
+    "bus": {
+      "title": "Bus",
+      "description": "Check schedules at the link below. Note that buses can only be used with the GV Card, issued at the Integration Terminals."
+    },
+    "waterway": {
+      "title": "Waterway",
+      "description": "The waterway service can be used with the GV Card or contactless credit/debit card payment, depending on system availability.",
+      "schedule": "Ferry schedules available at the official link",
+      "terminal": "Nearest terminal: Terminal Ilha do Príncipe"
+    },
+    "consultSchedule": "Check schedules"
+  },
+  "lateCheckout": {
+    "title": "Late Check-out",
+    "subtitle": "Request an extension of your stay.",
+    "dateLabel": "Desired date",
+    "timeLabel": "Desired time",
+    "obsLabel": "Notes",
+    "sentTitle": "Request sent",
+    "sentDescription": "Your request has been forwarded to reception. It will be reviewed based on room availability for the requested date. Submitting this request does not guarantee automatic Late Check-out confirmation.",
+    "detailDate": "Desired date",
+    "detailTime": "Time",
+    "detailObs": "Notes"
+  },
+  "guiaTour": {
+    "title": "Tour Guide",
+    "subtitle": "Explore local tourism: attractions, beaches, dining and events in Espírito Santo, curated to make your stay even more special.",
+    "categories": [
+      { "title": "Beaches", "description": "Praia do Canto, Curva da Jurema and Camburi just minutes away" },
+      { "title": "Museums", "description": "Museu Vale, MAES and Palácio Anchieta" },
+      { "title": "Today's events", "description": "Updated cultural agenda for the capital" },
+      { "title": "Cultural events", "description": "Exhibitions, theater and live music" },
+      { "title": "Shows", "description": "Concerts and performances in Greater Vitória" },
+      { "title": "Restaurants", "description": "Local cuisine, seafood and more" },
+      { "title": "Bars", "description": "Options for happy hour and nightlife" },
+      { "title": "Coffee shops", "description": "Specialty coffee along the waterfront and downtown" },
+      { "title": "Markets", "description": "Craft fairs and local products" },
+      { "title": "Trails", "description": "Ecological trails close to the city" },
+      { "title": "Tours", "description": "Boat trips and city tours" },
+      { "title": "Maps and routes", "description": "Suggested itineraries around Espírito Santo" }
+    ]
+  },
+  "form": {
+    "title": "We hope your stay has been special!",
+    "subtitle": "We'd like to know how your stay is going and whether there's anything we can do to make it even better.",
+    "question1": "Is the room clean and organized as you expected?",
+    "question2": "Is it comfortable and meeting your needs?",
+    "question3": "Is there anything we can arrange right now to make your stay even better?",
+    "answers": { "yes": "Yes", "partial": "Partially", "no": "No" },
+    "sendButton": "Submit answer",
+    "thanksTitle": "Thank you for your answer!",
+    "thanksDescription": "Thank you for choosing Hotel Senac Ilha do Boi. Your feedback helps us make your stay even better."
+  },
+  "rules": {
+    "title": "Welcome!",
+    "subtitle": "Hotel information and guidelines to make your stay even more relaxing.",
+    "gastronomyTitle": "Dining",
+    "gastronomy": [
+      { "name": "Breakfast", "info": "Served in the Restaurant from 6:00 AM to 10:00 AM." },
+      { "name": "Executive Lunch", "info": "Served Monday to Thursday from 12:00 PM to 4:00 PM." },
+      { "name": "Friday Moqueca", "info": "On Fridays from 12:00 PM to 3:00 PM." },
+      { "name": "Saturday Feijoada", "info": "On Saturdays from 12:00 PM to 4:00 PM." },
+      { "name": "Italian Sunday", "info": "On Sundays from 12:00 PM to 4:00 PM." },
+      { "name": "À la carte service", "info": "Daily from 12:00 PM to 10:00 PM." },
+      { "name": "24h Room Service", "info": "Menu on the QR Code next to the minibar. Extension 258 or 257." },
+      { "name": "Piano Bar", "info": "Open daily from 6:00 PM to 10:00 PM." }
+    ],
+    "leisureTitle": "Leisure",
+    "leisure": [
+      { "name": "Pool", "info": "Available from 9:00 AM to 8:00 PM. Towels are also available at Reception for your convenience.", "obs": "Towels must be returned to Reception by 8:00 PM the same day." },
+      { "name": "Ecological Trail and Pier", "info": "Open from 8:00 AM to 7:00 PM. Ecological trail with stairs leading to an exclusive pier with a view of Vitória Bay. The pier connects to Curva da Jurema, near Shopping Vitória." },
+      { "name": "Sauna and Gym", "info": "Located on the 1st floor, accessible by elevator. Gym: 6:00 AM to 10:00 PM. Sauna: 2:00 PM to 10:00 PM.", "obs": "Please ask reception to turn on the sauna 30 minutes in advance." },
+      { "name": "Tennis Court", "info": "Check availability and booking with Reception." }
+    ],
+    "receptionTitle": "Reception",
+    "receptionDescription": "We're available to assist you. Reachable at extensions 250 or 251.",
+    "wifiTitle": "Wi-Fi",
+    "wifiDescription": "Connect to the Senac network, click on GUEST and follow the access instructions.",
+    "housekeepingTitle": "Housekeeping and Laundry",
+    "housekeeping": [
+      { "name": "Room cleaning", "info": "Daily from 8:00 AM to 3:00 PM.", "obs": "If you'd rather not have your room cleaned, please use the Do Not Disturb sign." },
+      { "name": "Laundry", "info": "Please request pickup by 10:00 AM. Fill out the laundry slip, indicate the type of service and place the clothes inside the designated bag. Available Monday to Saturday (except holidays). An iron and ironing board are available at reception." }
+    ],
+    "extrasTitle": "Extra Charges",
+    "extrasDescription": "Payment can be made at time of service or at check-out (for the latter, a credit card must be registered at reception). Minibar consumption will be settled at check-out.",
+    "noSmokingTitle": "100% Non-Smoking Hotel",
+    "noSmokingDescription": "A fee equivalent to one night at the standard rate will apply in case of non-compliance.",
+    "farewell1": "We wish you a wonderful stay,",
+    "farewell2": "Hotel Senac Ilha do Boi Team"
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "subtitle": "Reception · Hotel Senac Ilha do Boi",
+    "openBadge": "{count} open",
+    "exit": "Exit",
+    "requestsTitle": "Requests",
+    "filters": { "all": "All", "pending": "Pending", "inProgress": "In progress", "done": "Completed" },
+    "columns": { "request": "Request", "apartment": "Room", "datetime": "Date/Time", "status": "Status" },
+    "category": { "quarto": "Room Service", "manutencao": "Maintenance", "checkout": "Late Check-out" },
+    "status": { "pendente": "Pending", "em_atendimento": "In progress", "concluido": "Completed" },
+    "emptyList": "No requests in this category.",
+    "satisfactionTitle": "Satisfaction Surveys",
+    "satisfactionEmpty": "No responses received yet.",
+    "cleanliness": "Cleanliness",
+    "comfort": "Comfort"
+  }
+}

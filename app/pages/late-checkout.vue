@@ -1,6 +1,7 @@
 <script setup lang="ts">
 definePageMeta({ layout: 'guest' })
 
+const { t } = useI18n()
 const session = useSessionStore()
 const requests = useRequestsStore()
 
@@ -14,9 +15,9 @@ const podeEnviar = computed(() => data.value && horario.value)
 function enviar() {
   requests.adicionar({
     categoria: 'checkout',
-    titulo: 'Late Check-out',
-    apartamento: session.apartamento || 'não informado',
-    detalhe: `Data desejada: ${data.value} · Horário: ${horario.value}${observacoes.value ? ` · Obs: ${observacoes.value}` : ''}`
+    titulo: t('home.menu.lateCheckout.title'),
+    apartamento: session.apartamento || t('common.notInformed'),
+    detalhe: `${t('lateCheckout.detailDate')}: ${data.value} · ${t('lateCheckout.detailTime')}: ${horario.value}${observacoes.value ? ` · ${t('lateCheckout.detailObs')}: ${observacoes.value}` : ''}`
   })
   enviado.value = true
   data.value = ''
@@ -29,10 +30,10 @@ function enviar() {
   <div class="space-y-4">
     <div>
       <p class="text-xl font-bold">
-        Late Check-out
+        {{ t('lateCheckout.title') }}
       </p>
       <p class="text-neutral-500 text-sm">
-        Solicite a extensão da sua hospedagem.
+        {{ t('lateCheckout.subtitle') }}
       </p>
     </div>
 
@@ -41,30 +42,30 @@ function enviar() {
       icon="i-lucide-info"
       color="info"
       variant="subtle"
-      title="Solicitação enviada"
-      description="Sua solicitação foi encaminhada para a recepção. O atendimento será analisado conforme a disponibilidade de apartamentos para a data solicitada. O envio da solicitação não representa confirmação automática do Late Check-out."
+      :title="t('lateCheckout.sentTitle')"
+      :description="t('lateCheckout.sentDescription')"
     />
 
     <UCard>
       <div class="space-y-4">
-        <UFormField label="Data desejada">
+        <UFormField :label="t('lateCheckout.dateLabel')">
           <UInput
             v-model="data"
             type="date"
             class="w-full"
           />
         </UFormField>
-        <UFormField label="Horário pretendido">
+        <UFormField :label="t('lateCheckout.timeLabel')">
           <UInput
             v-model="horario"
             type="time"
             class="w-full"
           />
         </UFormField>
-        <UFormField label="Observações">
+        <UFormField :label="t('lateCheckout.obsLabel')">
           <UTextarea
             v-model="observacoes"
-            placeholder="Opcional"
+            :placeholder="t('common.optional')"
             class="w-full"
           />
         </UFormField>
@@ -77,7 +78,7 @@ function enviar() {
           :disabled="!podeEnviar"
           @click="enviar"
         >
-          Enviar Solicitação
+          {{ t('common.sendRequest') }}
         </UButton>
       </template>
     </UCard>

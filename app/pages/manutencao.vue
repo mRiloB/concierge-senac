@@ -1,16 +1,14 @@
 <script setup lang="ts">
 definePageMeta({ layout: 'guest' })
 
+const { t, tm } = useI18n()
 const session = useSessionStore()
 const requests = useRequestsStore()
 
-const opcoes = [
-  'Ar-condicionado',
-  'Chuveiro',
-  'Torneira',
-  'Televisão',
-  'Internet Wi-Fi'
-]
+const opcoes = computed(() => {
+  const options = tm('maintenance.options') as object[]
+  return options.map(opt => opt.loc.source ?? '-') as string[]
+})
 
 const selecionados = ref<string[]>([])
 const outroTexto = ref('')
@@ -20,12 +18,12 @@ const enviado = ref(false)
 const podeEnviar = computed(() => selecionados.value.length > 0 || (outroAtivo.value && outroTexto.value.trim().length > 0))
 
 function enviar() {
-  const apartamento = session.apartamento || 'não informado'
+  const apartamento = session.apartamento || t('common.notInformed')
   for (const item of selecionados.value) {
-    requests.adicionar({ categoria: 'manutencao', titulo: `Problema: ${item}`, apartamento })
+    requests.adicionar({ categoria: 'manutencao', titulo: `${t('maintenance.problemPrefix')}: ${item}`, apartamento })
   }
   if (outroAtivo.value && outroTexto.value.trim()) {
-    requests.adicionar({ categoria: 'manutencao', titulo: 'Outros', apartamento, detalhe: outroTexto.value.trim() })
+    requests.adicionar({ categoria: 'manutencao', titulo: t('common.other'), apartamento, detalhe: outroTexto.value.trim() })
   }
   enviado.value = true
   selecionados.value = []
@@ -38,10 +36,10 @@ function enviar() {
   <div class="space-y-4">
     <div>
       <p class="text-xl font-bold">
-        Manutenção
+        {{ t('maintenance.title') }}
       </p>
       <p class="text-neutral-500 text-sm">
-        Informe o problema encontrado na sua unidade habitacional. A solicitação será direcionada ao setor responsável para avaliação.
+        {{ t('maintenance.subtitle') }}
       </p>
     </div>
 
@@ -50,8 +48,8 @@ function enviar() {
       icon="i-lucide-check-circle"
       color="success"
       variant="subtle"
-      title="Solicitação enviada"
-      description="A solicitação será direcionada ao setor responsável para avaliação."
+      :title="t('maintenance.sentTitle')"
+      :description="t('maintenance.sentDescription')"
     />
 
     <UCard>
@@ -62,12 +60,12 @@ function enviar() {
         />
         <UCheckbox
           v-model="outroAtivo"
-          label="Outros"
+          :label="t('common.other')"
         />
         <UTextarea
           v-if="outroAtivo"
           v-model="outroTexto"
-          placeholder="Ex: &quot;A tomada próxima à cama não está funcionando.&quot;"
+          :placeholder="t('maintenance.otherPlaceholder')"
           class="w-full"
         />
       </div>
@@ -79,7 +77,7 @@ function enviar() {
           :disabled="!podeEnviar"
           @click="enviar"
         >
-          Enviar Solicitação
+          {{ t('common.sendRequest') }}
         </UButton>
       </template>
     </UCard>

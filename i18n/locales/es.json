@@ -1,0 +1,177 @@
+{
+  "common": {
+    "home": "Inicio",
+    "receptionAccess": "Acceso del personal",
+    "apartment": "Habitación {number}",
+    "change": "cambiar",
+    "optional": "Opcional",
+    "other": "Otros",
+    "sendRequest": "Enviar Solicitud",
+    "notInformed": "no informado",
+    "route": "Ruta"
+  },
+  "header": {
+    "hotelName": "Hotel Senac Ilha do Boi",
+    "subtitle": "Concierge Digital"
+  },
+  "guiaTourBanner": {
+    "title": "GUÍA TURÍSTICA",
+    "subtitle": "Descubra playas, restaurantes, paseos y eventos de Espírito Santo"
+  },
+  "welcome": {
+    "title": "Bienvenido(a) al Hotel Senac Ilha do Boi",
+    "subtitle": "Para comenzar, indique el número de su habitación y acceda al Concierge Digital.",
+    "placeholder": "N.º de habitación: 204",
+    "error": "Indique el número de su habitación para continuar."
+  },
+  "home": {
+    "welcomeTitle": "¡Bienvenido al Hotel Senac Ilha do Boi!",
+    "welcomeSubtitle": "Nos alegra recibirle. Utilice nuestro Concierge Digital para solicitar servicios, consultar información útil y descubrir las mejores experiencias turísticas de Espírito Santo.",
+    "satisfactionTitle": "¿Cómo va su estadía?",
+    "satisfactionSubtitle": "Responda nuestra breve encuesta de satisfacción",
+    "satisfactionButton": "Responder",
+    "menu": {
+      "roomService": { "title": "Servicio a la Habitación", "description": "Almohada, toalla, limpieza y más" },
+      "maintenance": { "title": "Mantenimiento", "description": "Reporte un problema en su habitación" },
+      "pharmacies": { "title": "Farmacias", "description": "Farmacias cercanas al hotel" },
+      "transport": { "title": "Transporte Público", "description": "Autobús y transporte acuático" },
+      "lateCheckout": { "title": "Late Check-out", "description": "Solicite la extensión de su estadía" },
+      "rules": { "title": "Guía del Hotel", "description": "Horarios de gastronomía, ocio y más" }
+    }
+  },
+  "roomService": {
+    "title": "Servicio a la Habitación",
+    "subtitle": "Seleccione lo que necesita. Su solicitud será enviada automáticamente a la recepción.",
+    "options": ["Almohada extra", "Toalla extra", "Limpieza de la habitación", "Plancha de ropa"],
+    "otherPlaceholder": "Ej.: \"Necesito una manta adicional.\"",
+    "sentTitle": "Solicitud enviada",
+    "sentDescription": "Su solicitud fue enviada automáticamente a la recepción."
+  },
+  "maintenance": {
+    "title": "Mantenimiento",
+    "subtitle": "Indique el problema encontrado en su habitación. La solicitud será enviada al sector responsable para su evaluación.",
+    "options": ["Aire acondicionado", "Ducha", "Grifo", "Televisor", "Wi-Fi"],
+    "problemPrefix": "Problema",
+    "otherPlaceholder": "Ej.: \"El enchufe cerca de la cama no funciona.\"",
+    "sentTitle": "Solicitud enviada",
+    "sentDescription": "La solicitud será enviada al sector responsable para su evaluación."
+  },
+  "pharmacies": {
+    "title": "Farmacias",
+    "subtitle": "Farmacias más cercanas al Hotel Senac Ilha do Boi.",
+    "items": [
+      { "name": "Farmácia Ilha do Boi", "address": "Av. Saturnino de Brito, Ilha do Boi", "distance": "450 m", "phone": "+55 (27) 3345-1122" },
+      { "name": "Drogaria São Paulo", "address": "Av. Dante Michelini, Praia do Canto", "distance": "1,8 km", "phone": "+55 (27) 3222-4488" },
+      { "name": "Farmácia Pague Menos", "address": "Av. Nossa Senhora da Penha, Praia do Canto", "distance": "2,3 km", "phone": "+55 (27) 3225-6677" }
+    ]
+  },
+  "transport": {
+    "title": "Transporte Público",
+    "subtitle": "Información sobre los medios de transporte público disponibles.",
+    "bus": {
+      "title": "Autobús",
+      "description": "Consulte los horarios en el enlace de abajo. Recuerde que el uso del autobús se realiza exclusivamente con la Tarjeta GV, emitida en las Terminales de Integración."
+    },
+    "waterway": {
+      "title": "Transporte Acuático",
+      "description": "El transporte acuático puede utilizarse con la Tarjeta GV o mediante pago por aproximación con tarjeta de crédito o débito, según disponibilidad del sistema.",
+      "schedule": "Horarios de las embarcaciones disponibles en el enlace oficial",
+      "terminal": "Terminal más cercana: Terminal Ilha do Príncipe"
+    },
+    "consultSchedule": "Consultar horarios"
+  },
+  "lateCheckout": {
+    "title": "Late Check-out",
+    "subtitle": "Solicite la extensión de su estadía.",
+    "dateLabel": "Fecha deseada",
+    "timeLabel": "Hora deseada",
+    "obsLabel": "Observaciones",
+    "sentTitle": "Solicitud enviada",
+    "sentDescription": "Su solicitud fue enviada a la recepción. Será evaluada según la disponibilidad de habitaciones para la fecha solicitada. El envío de la solicitud no representa una confirmación automática del Late Check-out.",
+    "detailDate": "Fecha deseada",
+    "detailTime": "Hora",
+    "detailObs": "Obs"
+  },
+  "guiaTour": {
+    "title": "Guía Turística",
+    "subtitle": "Descubra el turismo local: atractivos, playas, gastronomía y eventos de Espírito Santo, seleccionados para hacer su estadía aún más especial.",
+    "categories": [
+      { "title": "Playas", "description": "Praia do Canto, Curva da Jurema y Camburi a pocos minutos" },
+      { "title": "Museos", "description": "Museu Vale, MAES y Palácio Anchieta" },
+      { "title": "Eventos del día", "description": "Agenda cultural actualizada de la capital" },
+      { "title": "Programación cultural", "description": "Exposiciones, teatro y música en vivo" },
+      { "title": "Espectáculos", "description": "Conciertos y presentaciones en Grande Vitória" },
+      { "title": "Restaurantes", "description": "Gastronomía local, mariscos y más" },
+      { "title": "Bares", "description": "Opciones para happy hour y vida nocturna" },
+      { "title": "Cafeterías", "description": "Cafés especiales junto a la costa y en el centro" },
+      { "title": "Ferias", "description": "Ferias de artesanía y productos locales" },
+      { "title": "Senderos", "description": "Senderos ecológicos cerca de la ciudad" },
+      { "title": "Paseos", "description": "Paseos en barco y city tours" },
+      { "title": "Mapas y rutas turísticas", "description": "Itinerarios sugeridos por Espírito Santo" }
+    ]
+  },
+  "form": {
+    "title": "¡Esperamos que su estadía esté siendo especial!",
+    "subtitle": "Nos gustaría saber cómo va su estadía y si podemos ayudar a que sea aún más agradable.",
+    "question1": "¿La habitación está limpia y organizada conforme a lo esperado?",
+    "question2": "¿Es cómoda y satisface sus necesidades?",
+    "question3": "¿Hay algo que podamos hacer ahora mismo para mejorar su estadía?",
+    "answers": { "yes": "Sí", "partial": "En parte", "no": "No" },
+    "sendButton": "Enviar respuesta",
+    "thanksTitle": "¡Gracias por su respuesta!",
+    "thanksDescription": "Gracias por elegir el Hotel Senac Ilha do Boi. Su opinión nos ayuda a mejorar su estadía."
+  },
+  "rules": {
+    "title": "¡Bienvenidos!",
+    "subtitle": "Información y normas del hotel para hacer su estadía aún más tranquila.",
+    "gastronomyTitle": "Gastronomía",
+    "gastronomy": [
+      { "name": "Desayuno", "info": "Servido en el Restaurante de 06:00 a 10:00 h." },
+      { "name": "Almuerzo Ejecutivo", "info": "Servido de lunes a jueves de 12:00 a 16:00 h." },
+      { "name": "Moqueca de los Viernes", "info": "Los viernes de 12:00 a 15:00 h." },
+      { "name": "Feijoada de Sábado", "info": "Los sábados de 12:00 a 16:00 h." },
+      { "name": "Domingo Italiano", "info": "Los domingos de 12:00 a 16:00 h." },
+      { "name": "Servicio a la carta", "info": "Diariamente de 12:00 a 22:00 h." },
+      { "name": "Room Service 24h", "info": "Menú en el código QR cerca del minibar. Extensión 258 o 257." },
+      { "name": "Piano Bar", "info": "Abierto diariamente de 18:00 a 22:00 h." }
+    ],
+    "leisureTitle": "Ocio",
+    "leisure": [
+      { "name": "Piscina", "info": "Disponible de 09:00 a 20:00 h. También contamos con toallas en la Recepción para su comodidad.", "obs": "Después del uso, devolución en la Recepción hasta las 20:00 h del mismo día." },
+      { "name": "Sendero Ecológico y Muelle", "info": "Funcionamiento de 08:00 a 19:00 h. Sendero ecológico con escaleras hasta un muelle exclusivo con vista a la bahía de Vitória. El muelle conecta con Curva da Jurema, cerca de Shopping Vitória." },
+      { "name": "Sauna y Gimnasio", "info": "Ubicados en el 1er piso, con acceso por ascensor. Gimnasio: de 06:00 a 22:00 h. Sauna: de 14:00 a 22:00 h.", "obs": "Solicite a la recepción encender la sauna con 30 min de anticipación." },
+      { "name": "Cancha de Tenis", "info": "Consulte disponibilidad y reserva con la Recepción." }
+    ],
+    "receptionTitle": "Recepción",
+    "receptionDescription": "Estamos a su disposición para atenderle mejor. Disponible en las extensiones 250 o 251.",
+    "wifiTitle": "Wi-Fi",
+    "wifiDescription": "Conéctese a la red Senac, haga clic en HUÉSPED y realice el acceso según lo indicado.",
+    "housekeepingTitle": "Servicio de Limpieza y Lavandería",
+    "housekeeping": [
+      { "name": "Limpieza de las habitaciones", "info": "Diariamente de 8:00 a 15:00 h.", "obs": "Si no desea el servicio de limpieza, utilice el letrero No Molestar." },
+      { "name": "Lavandería", "info": "Solicite el recojo de la prenda hasta las 10:00 h. Es necesario completar la orden, indicar el tipo de servicio y dejar la ropa dentro de la bolsa destinada al servicio. Disponible de lunes a sábado (excepto feriados). En recepción disponemos de plancha y tabla de planchar." }
+    ],
+    "extrasTitle": "Consumos Extras",
+    "extrasDescription": "Pago al momento del servicio o al hacer el check-out (para esta última opción, es necesario registrar la tarjeta de crédito en recepción). El consumo del minibar se liquidará en el check-out.",
+    "noSmokingTitle": "Hotel 100% libre de humo",
+    "noSmokingDescription": "En caso de incumplimiento, se aplicará una tarifa equivalente a una noche a tarifa de mostrador.",
+    "farewell1": "Le deseamos una excelente estadía,",
+    "farewell2": "Equipo del Hotel Senac Ilha do Boi"
+  },
+  "admin": {
+    "title": "Panel Administrativo",
+    "subtitle": "Recepción · Hotel Senac Ilha do Boi",
+    "openBadge": "{count} abiertas",
+    "exit": "Salir",
+    "requestsTitle": "Solicitudes",
+    "filters": { "all": "Todas", "pending": "Pendientes", "inProgress": "En atención", "done": "Completadas" },
+    "columns": { "request": "Solicitud", "apartment": "Habitación", "datetime": "Fecha/Hora", "status": "Estado" },
+    "category": { "quarto": "Servicio a la Habitación", "manutencao": "Mantenimiento", "checkout": "Late Check-out" },
+    "status": { "pendente": "Pendiente", "em_atendimento": "En atención", "concluido": "Completada" },
+    "emptyList": "No hay solicitudes en esta categoría.",
+    "satisfactionTitle": "Encuestas de Satisfacción",
+    "satisfactionEmpty": "Aún no se han recibido respuestas.",
+    "cleanliness": "Limpieza",
+    "comfort": "Confort"
+  }
+}

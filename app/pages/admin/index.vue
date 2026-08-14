@@ -1,23 +1,30 @@
 <script setup lang="ts">
 definePageMeta({ layout: 'admin' })
 
+const { t } = useAdminT()
 const requests = useRequestsStore()
 const satisfaction = useSatisfactionStore()
 
 const filtro = ref<'todos' | 'pendente' | 'em_atendimento' | 'concluido'>('todos')
 
-const filtros = [
-  { label: 'Todos', value: 'todos' },
-  { label: 'Pendentes', value: 'pendente' },
-  { label: 'Em atendimento', value: 'em_atendimento' },
-  { label: 'Concluídos', value: 'concluido' }
-]
+const filtros = computed(() => [
+  { label: t('admin.filters.all'), value: 'todos' },
+  { label: t('admin.filters.pending'), value: 'pendente' },
+  { label: t('admin.filters.inProgress'), value: 'em_atendimento' },
+  { label: t('admin.filters.done'), value: 'concluido' }
+])
 
-const categoriaLabel: Record<string, string> = {
-  quarto: 'Serviço de Quarto',
-  manutencao: 'Manutenção',
-  checkout: 'Late Check-out'
-}
+const categoriaLabel = computed<Record<string, string>>(() => ({
+  quarto: t('admin.category.quarto'),
+  manutencao: t('admin.category.manutencao'),
+  checkout: t('admin.category.checkout')
+}))
+
+const respostaLabel = computed<Record<string, string>>(() => ({
+  sim: t('form.answers.yes'),
+  parcial: t('form.answers.partial'),
+  nao: t('form.answers.no')
+}))
 
 const listaFiltrada = computed(() => {
   const all = requests.ordenadas
@@ -29,18 +36,25 @@ function formatarHora(d: Date) {
   return new Date(d).toLocaleString('pt-BR', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' })
 }
 
-const statusOptions = [
-  { label: 'Pendente', value: 'pendente' },
-  { label: 'Em atendimento', value: 'em_atendimento' },
-  { label: 'Concluído', value: 'concluido' }
-]
+const statusOptions = computed(() => [
+  { label: t('admin.status.pendente'), value: 'pendente' },
+  { label: t('admin.status.em_atendimento'), value: 'em_atendimento' },
+  { label: t('admin.status.concluido'), value: 'concluido' }
+])
+
+const columns = computed(() => [
+  { accessorKey: 'titulo', header: t('admin.columns.request') },
+  { accessorKey: 'apartamento', header: t('admin.columns.apartment') },
+  { accessorKey: 'criadoEm', header: t('admin.columns.datetime') },
+  { accessorKey: 'status', header: t('admin.columns.status') }
+])
 </script>
 
 <template>
   <div class="space-y-6">
     <div class="flex items-center justify-between flex-wrap gap-3">
       <p class="text-lg font-semibold">
-        Solicitações
+        {{ t('admin.requestsTitle') }}
       </p>
       <UTabs
         v-model="filtro"
@@ -53,12 +67,7 @@ const statusOptions = [
     <UCard>
       <UTable
         :data="listaFiltrada"
-        :columns="[
-          { accessorKey: 'titulo', header: 'Solicitação' },
-          { accessorKey: 'apartamento', header: 'Apartamento' },
-          { accessorKey: 'criadoEm', header: 'Data/Hora' },
-          { accessorKey: 'status', header: 'Status' }
-        ]"
+        :columns="columns"
       >
         <template #titulo-cell="{ row }">
           <div>
@@ -97,13 +106,13 @@ const statusOptions = [
         v-if="!listaFiltrada.length"
         class="text-center text-neutral-400 text-sm py-6"
       >
-        Nenhuma solicitação nesta categoria.
+        {{ t('admin.emptyList') }}
       </p>
     </UCard>
 
     <div>
       <p class="text-lg font-semibold mb-3">
-        Pesquisas de Satisfação
+        {{ t('admin.satisfactionTitle') }}
       </p>
       <UCard v-if="satisfaction.respostas.length">
         <div class="divide-y divide-neutral-200 dark:divide-neutral-800">
@@ -114,15 +123,15 @@ const statusOptions = [
           >
             <div class="flex items-center justify-between text-sm">
               <p class="font-medium">
-                Apartamento {{ r.apartamento }}
+                {{ t('admin.columns.apartment') }} {{ r.apartamento }}
               </p>
               <p class="text-neutral-400 text-xs">
                 {{ formatarHora(r.criadoEm) }}
               </p>
             </div>
             <div class="flex gap-4 text-xs text-neutral-500 mt-1">
-              <span>Limpeza: {{ r.limpo }}</span>
-              <span>Conforto: {{ r.confortavel }}</span>
+              <span>{{ t('admin.cleanliness') }}: {{ respostaLabel[r.limpo] }}</span>
+              <span>{{ t('admin.comfort') }}: {{ respostaLabel[r.confortavel] }}</span>
             </div>
             <p
               v-if="r.observacoes"
@@ -135,7 +144,7 @@ const statusOptions = [
       </UCard>
       <UCard v-else>
         <p class="text-center text-neutral-400 text-sm py-2">
-          Nenhuma resposta recebida ainda.
+          {{ t('admin.satisfactionEmpty') }}
         </p>
       </UCard>
     </div>

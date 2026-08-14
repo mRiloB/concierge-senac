@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const { t } = useAdminT()
 const requests = useRequestsStore()
 </script>
 
@@ -12,10 +13,10 @@ const requests = useRequestsStore()
         />
         <div>
           <p class="font-semibold leading-tight">
-            Painel Administrativo
+            {{ t('admin.title') }}
           </p>
           <p class="text-xs text-white/60 leading-tight">
-            Recepção · Hotel Senac Ilha do Boi
+            {{ t('admin.subtitle') }}
           </p>
         </div>
         <UBadge
@@ -24,7 +25,7 @@ const requests = useRequestsStore()
           variant="subtle"
           class="ml-auto"
         >
-          {{ requests.pendentesCount }} em aberto
+          {{ t('admin.openBadge', { count: requests.pendentesCount }) }}
         </UBadge>
         <UButton
           to="/"
@@ -33,7 +34,7 @@ const requests = useRequestsStore()
           variant="ghost"
           size="sm"
         >
-          Sair
+          {{ t('admin.exit') }}
         </UButton>
       </div>
     </header>

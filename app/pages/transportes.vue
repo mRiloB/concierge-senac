@@ -1,15 +1,16 @@
 <script setup lang="ts">
 definePageMeta({ layout: 'guest' })
+const { t } = useI18n()
 </script>
 
 <template>
   <div class="space-y-4">
     <div>
       <p class="text-xl font-bold">
-        Transportes Coletivos
+        {{ t('transport.title') }}
       </p>
       <p class="text-neutral-500 text-sm">
-        Informações sobre os meios de transporte público disponíveis.
+        {{ t('transport.subtitle') }}
       </p>
     </div>
 
@@ -20,12 +21,11 @@ definePageMeta({ layout: 'guest' })
           class="size-5 text-primary-600"
         />
         <p class="font-semibold">
-          Ônibus
+          {{ t('transport.bus.title') }}
         </p>
       </div>
       <p class="text-sm text-neutral-600 dark:text-neutral-300">
-        Consulte os horários no link abaixo. Lembre-se de que a utilização dos ônibus é realizada
-        exclusivamente mediante o Cartão GV, emitido nos Terminais de Integração.
+        {{ t('transport.bus.description') }}
       </p>
       <template #footer>
         <UButton
@@ -35,7 +35,7 @@ definePageMeta({ layout: 'guest' })
           variant="soft"
           block
         >
-          Consultar horários
+          {{ t('transport.consultSchedule') }}
         </UButton>
       </template>
     </UCard>
@@ -47,12 +47,11 @@ definePageMeta({ layout: 'guest' })
           class="size-5 text-primary-600"
         />
         <p class="font-semibold">
-          Aquaviário
+          {{ t('transport.waterway.title') }}
         </p>
       </div>
       <p class="text-sm text-neutral-600 dark:text-neutral-300">
-        O transporte aquaviário pode ser utilizado por meio do Cartão GV ou pagamento por cartões de
-        crédito e débito por aproximação, conforme disponibilidade do sistema.
+        {{ t('transport.waterway.description') }}
       </p>
       <ul class="text-sm text-neutral-500 mt-2 space-y-1">
         <li class="flex items-center gap-1.5">
@@ -60,14 +59,14 @@ definePageMeta({ layout: 'guest' })
             name="i-lucide-clock"
             class="size-3.5"
           />
-          Horários das embarcações disponíveis no link oficial
+          {{ t('transport.waterway.schedule') }}
         </li>
         <li class="flex items-center gap-1.5">
           <UIcon
             name="i-lucide-map-pin"
             class="size-3.5"
           />
-          Terminal mais próximo: Terminal Ilha do Príncipe
+          {{ t('transport.waterway.terminal') }}
         </li>
       </ul>
       <template #footer>
@@ -78,7 +77,7 @@ definePageMeta({ layout: 'guest' })
           variant="soft"
           block
         >
-          Consultar horários
+          {{ t('transport.consultSchedule') }}
         </UButton>
       </template>
     </UCard>

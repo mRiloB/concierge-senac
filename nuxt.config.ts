@@ -3,7 +3,8 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
     '@nuxt/ui',
-    '@pinia/nuxt'
+    '@pinia/nuxt',
+    '@nuxtjs/i18n'
   ],
 
   devtools: {
@@ -29,6 +30,23 @@ export default defineNuxtConfig({
         commaDangle: 'never',
         braceStyle: '1tbs'
       }
+    }
+  },
+
+  i18n: {
+    baseUrl: '/',
+    defaultLocale: 'pt',
+    strategy: 'no_prefix',
+    locales: [
+      { code: 'pt', language: 'pt-BR', name: 'Português', file: 'pt.json' },
+      { code: 'en', language: 'en-US', name: 'English', file: 'en.json' },
+      { code: 'es', language: 'es-ES', name: 'Español', file: 'es.json' }
+    ],
+    langDir: 'locales',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'concierge_locale',
+      redirectOn: 'root'
     }
   },
   icon: {

@@ -3,16 +3,17 @@ import WelcomeSection from '~/components/WelcomeSection.vue'
 
 definePageMeta({ layout: 'guest' })
 
+const { t } = useI18n()
 const session = useSessionStore()
 
-const menu = [
-  { to: '/servico-quarto', icon: 'i-lucide-bed-double', title: 'Serviço de Quarto', description: 'Travesseiro, toalha, limpeza e mais' },
-  { to: '/manutencao', icon: 'i-lucide-wrench', title: 'Manutenção', description: 'Relate um problema no seu apartamento' },
-  { to: '/farmacias', icon: 'i-lucide-cross', title: 'Farmácias', description: 'Farmácias próximas ao hotel' },
-  { to: '/transportes', icon: 'i-lucide-bus', title: 'Transportes Coletivos', description: 'Ônibus e transporte aquaviário' },
-  { to: '/late-checkout', icon: 'i-lucide-clock', title: 'Late Check-out', description: 'Solicite a extensão da sua estadia' },
-  { to: '/regras', icon: 'i-lucide-book-open', title: 'Regras do Hotel', description: 'Horários de gastronomia, lazer e mais' }
-]
+const menu = computed(() => [
+  { to: '/servico-quarto', icon: 'i-lucide-bed-double', title: t('home.menu.roomService.title'), description: t('home.menu.roomService.description') },
+  { to: '/manutencao', icon: 'i-lucide-wrench', title: t('home.menu.maintenance.title'), description: t('home.menu.maintenance.description') },
+  { to: '/farmacias', icon: 'i-lucide-cross', title: t('home.menu.pharmacies.title'), description: t('home.menu.pharmacies.description') },
+  { to: '/transportes', icon: 'i-lucide-bus', title: t('home.menu.transport.title'), description: t('home.menu.transport.description') },
+  { to: '/late-checkout', icon: 'i-lucide-clock', title: t('home.menu.lateCheckout.title'), description: t('home.menu.lateCheckout.description') },
+  { to: '/regras', icon: 'i-lucide-book-open', title: t('home.menu.rules.title'), description: t('home.menu.rules.description') }
+])
 </script>
 
 <template>
@@ -27,11 +28,10 @@ const menu = [
     >
       <div class="rounded-xl overflow-hidden bg-linear-to-br from-primary-700 to-primary-950 text-white p-6">
         <p class="text-2xl font-bold">
-          Bem-vindo ao Hotel Senac Ilha do Boi!
+          {{ t('home.welcomeTitle') }}
         </p>
         <p class="text-white/85 mt-1 max-w-lg">
-          Estamos felizes em recebê-lo. Utilize nosso Concierge Digital para solicitar serviços,
-          consultar informações úteis e descobrir as melhores experiências turísticas do Espírito Santo.
+          {{ t('home.welcomeSubtitle') }}
         </p>
       </div>
 
@@ -40,14 +40,14 @@ const menu = [
           name="i-lucide-door-open"
           class="size-4"
         />
-        Apartamento {{ session.apartamento }}
+        {{ t('common.apartment', { number: session.apartamento }) }}
         <UButton
           size="xs"
           color="neutral"
           variant="link"
           @click="session.definirApartamento('')"
         >
-          alterar
+          {{ t('common.change') }}
         </UButton>
       </div>
 
@@ -67,10 +67,10 @@ const menu = [
           />
           <div class="min-w-0">
             <p class="font-medium">
-              Como está sendo sua estadia?
+              {{ t('home.satisfactionTitle') }}
             </p>
             <p class="text-sm text-neutral-500">
-              Responda nossa breve pesquisa de satisfação
+              {{ t('home.satisfactionSubtitle') }}
             </p>
           </div>
           <UButton
@@ -78,7 +78,7 @@ const menu = [
             class="ml-auto"
             variant="soft"
           >
-            Responder
+            {{ t('home.satisfactionButton') }}
           </UButton>
         </div>
       </UCard>
