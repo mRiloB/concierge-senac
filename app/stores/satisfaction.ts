@@ -10,6 +10,7 @@ export interface SatisfactionResponse {
 }
 
 export const useSatisfactionStore = defineStore('satisfaction', {
+  persist: true,
   state: () => ({
     respostas: [] as SatisfactionResponse[]
   }),

@@ -50,6 +50,7 @@ function seed(): ServiceRequest[] {
 }
 
 export const useRequestsStore = defineStore('requests', {
+  persist: true,
   state: () => ({
     items: seed() as ServiceRequest[]
   }),
