@@ -1,13 +1,16 @@
 <script setup lang="ts">
 definePageMeta({ layout: 'guest' })
 
-const { t, tm } = useI18n()
+const { t, tm, rt } = useI18n()
 const session = useSessionStore()
 const requests = useRequestsStore()
 
 const opcoes = computed(() => {
-  const options = tm('maintenance.options') as object[]
-  return options.map(opt => opt.loc.source ?? '-') as string[]
+  const options = tm('maintenance.options') as unknown[]
+  return options.map((option, _) => ({
+    label: rt(option as string),
+    value: rt(option as string)
+  }))
 })
 
 const selecionados = ref<string[]>([])

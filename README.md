@@ -1,4 +1,4 @@
-# Concierge Digital — Hotel Senac Ilha do Boi
+# Guest Connect — Hotel Senac Ilha do Boi
 
 Protótipo do sistema de atendimento ao hóspede (Projeto Integrador), construído em Nuxt 4 + Nuxt UI + Pinia.
 

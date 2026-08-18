@@ -12,7 +12,7 @@
   },
   "header": {
     "hotelName": "Hotel Senac Ilha do Boi",
-    "subtitle": "Concierge Digital"
+    "subtitle": "Guest Connect"
   },
   "guiaTourBanner": {
     "title": "GUÍA TURÍSTICA",
@@ -20,13 +20,13 @@
   },
   "welcome": {
     "title": "Bienvenido(a) al Hotel Senac Ilha do Boi",
-    "subtitle": "Para comenzar, indique el número de su habitación y acceda al Concierge Digital.",
+    "subtitle": "Para comenzar, indique el número de su habitación y acceda al Guest Connect.",
     "placeholder": "N.º de habitación: 204",
     "error": "Indique el número de su habitación para continuar."
   },
   "home": {
     "welcomeTitle": "¡Bienvenido al Hotel Senac Ilha do Boi!",
-    "welcomeSubtitle": "Nos alegra recibirle. Utilice nuestro Concierge Digital para solicitar servicios, consultar información útil y descubrir las mejores experiencias turísticas de Espírito Santo.",
+    "welcomeSubtitle": "Nos alegra recibirle. Utilice nuestro Guest Connect para solicitar servicios, consultar información útil y descubrir las mejores experiencias turísticas de Espírito Santo.",
     "satisfactionTitle": "¿Cómo va su estadía?",
     "satisfactionSubtitle": "Responda nuestra breve encuesta de satisfacción",
     "satisfactionButton": "Responder",

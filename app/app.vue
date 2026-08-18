@@ -9,7 +9,7 @@ useHead({
 })
 
 useSeoMeta({
-  title: 'Concierge Digital · Hotel Senac Ilha do Boi',
+  title: 'Guest Connect · Hotel Senac Ilha do Boi',
   description: 'Plataforma de atendimento ao hóspede do Hotel Senac Ilha do Boi'
 })
 </script>
